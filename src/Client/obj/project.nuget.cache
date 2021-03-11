@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "IZCUkRwhI07+LGAaGagRQrb0/0p58jM9n4d1CD5CU3N1gIZE0Ey6MyYAOMA1gouyrGWDeZxaU0nSJtsZDwzdlw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kosh\\Source\\Workspaces\\try-identity\\quickstart\\src\\Client\\Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kosh\\.nuget\\packages\\identitymodel\\5.0.1\\identitymodel.5.0.1.nupkg.sha512",
+    "C:\\Users\\kosh\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\kosh\\.nuget\\packages\\system.text.encodings.web\\5.0.0\\system.text.encodings.web.5.0.0.nupkg.sha512",
+    "C:\\Users\\kosh\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
