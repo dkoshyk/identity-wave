@@ -27,7 +27,6 @@ namespace Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddAuthentication("Bearer")
             .AddJwtBearer("Bearer", options =>
@@ -51,11 +50,26 @@ namespace Api
                     policy.RequireClaim("scope", "api1");
                 });
             });
+
+            services.AddCors(options =>
+            {
+                // this defines a CORS policy called "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("https://localhost:5003")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseRouting();
+
+            app.UseCors("default");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -64,8 +78,7 @@ namespace Api
             }
 
             app.UseHttpsRedirection();
-
-            app.UseRouting();
+            
 
             app.UseAuthentication();
             app.UseAuthorization();
